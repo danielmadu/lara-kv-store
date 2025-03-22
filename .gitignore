@@ -1,0 +1,8 @@
+/vendor
+composer.lock
+.env
+/node_modules
+/.vscode
+/.idea
+/.fleet
+
