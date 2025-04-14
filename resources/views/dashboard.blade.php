@@ -1,3 +1,3 @@
 <x-kvstore>
-    Oi
+    <livewire:larakvstore.list />
 </x-kvstore>

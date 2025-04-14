@@ -1,4 +1,4 @@
-{{--@use('Laravel\Pulse\Facades\Pulse')--}}
+@use('Danielmadu\LaraKvStore\LaraKvStore')
 @props(['cols' => 12, 'fullWidth' => false])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -12,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:300,400,500,600" rel="stylesheet" />
 
-{{--    {!! Pulse::css() !!}--}}
+    {!! LaraKvStore::css() !!}
     @livewireStyles
 
 {{--    {!! Pulse::js() !!}--}}
-    @livewireScriptConfig
+
 </head>
 <body class="bg-gray-50 dark:bg-gray-950 font-sans antialiased">
 <div class="min-h-screen">
@@ -28,5 +28,6 @@
         {{ $slot }}
     </x-kvstore::main>
 </div>
+@livewireScripts
 </body>
 </html>

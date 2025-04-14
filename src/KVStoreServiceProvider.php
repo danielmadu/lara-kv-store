@@ -10,6 +10,7 @@ use Illuminate\View\Compilers\BladeCompiler;
 use Illuminate\View\Factory as ViewFactory;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Factory;
+use Livewire\LivewireManager;
 
 class KVStoreServiceProvider extends ServiceProvider
 {
@@ -51,6 +52,18 @@ class KVStoreServiceProvider extends ServiceProvider
     {
         $this->callAfterResolving('blade.compiler', function (BladeCompiler $blade) {
             $blade->anonymousComponentPath(__DIR__.'/../resources/views/components', 'kvstore');
+        });
+
+        $this->callAfterResolving('livewire', function (LivewireManager $livewire, Application $app) {
+            #$middleware = collect($app->make('config')->get('pulse.middleware')) // @phpstan-ignore argument.templateType, argument.templateType
+            #    ->map(fn ($middleware) => is_string($middleware)
+            #        ? Str::before($middleware, ':')
+            #        : $middleware)
+            #    ->all();
+
+            #$livewire->addPersistentMiddleware($middleware);
+
+            $livewire->component('larakvstore.list', Livewire\ListKV::class);
         });
     }
 
