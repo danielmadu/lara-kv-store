@@ -32,7 +32,6 @@ class KVStoreServiceProvider extends ServiceProvider
                 Start::class,
             ]);
 
-
             $this->publishes([
                 __DIR__.'/../config/kvstore.php' => config_path('kvstore.php'),
             ], ['kv', 'kv-config']);
@@ -55,14 +54,6 @@ class KVStoreServiceProvider extends ServiceProvider
         });
 
         $this->callAfterResolving('livewire', function (LivewireManager $livewire, Application $app) {
-            #$middleware = collect($app->make('config')->get('pulse.middleware')) // @phpstan-ignore argument.templateType, argument.templateType
-            #    ->map(fn ($middleware) => is_string($middleware)
-            #        ? Str::before($middleware, ':')
-            #        : $middleware)
-            #    ->all();
-
-            #$livewire->addPersistentMiddleware($middleware);
-
             $livewire->component('larakvstore.list', Livewire\ListKV::class);
         });
     }

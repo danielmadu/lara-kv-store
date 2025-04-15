@@ -7,6 +7,7 @@ use Danielmadu\LaraKvStore\Commands\Delete;
 use Danielmadu\LaraKvStore\Commands\FlushDB;
 use Danielmadu\LaraKvStore\Commands\Get;
 use Danielmadu\LaraKvStore\Commands\IncrementBy;
+use Danielmadu\LaraKvStore\Commands\Keys;
 use Danielmadu\LaraKvStore\Commands\Select;
 use Danielmadu\LaraKvStore\Commands\Set;
 use Clue\Redis\Protocol\Factory as ProtocolFactory;
@@ -69,9 +70,8 @@ class Start extends Command
         $loop->run();
     }
 
-    public function command(Request $request): string|int|bool|null
+    public function command(Request $request): string|int|bool|null|array
     {
-//        $this->components->info('Command received: ' . $request->getCommand());
         $args = $request->getArgs();
 
         return match ($request->getCommand()) {
@@ -82,6 +82,7 @@ class Start extends Command
             'DECRBY' => (new DecrementBy)($args),
             'DEL' => (new Delete)($args),
             'FLUSHDB' => (new FlushDB)(),
+            'KEYS' => (new Keys())(),
             'PING' => 1,
             default => 0,
         };
