@@ -1,5 +1,6 @@
 /vendor
 composer.lock
+package-lock.json
 .env
 /node_modules
 /.vscode
