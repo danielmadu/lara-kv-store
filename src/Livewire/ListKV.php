@@ -3,10 +3,8 @@
 namespace Danielmadu\LaraKvStore\Livewire;
 
 use Illuminate\Support\Facades\App;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 
-#[Lazy]
 class ListKV extends Component
 {
     public function render()
