@@ -1,5 +1,4 @@
 @use('Danielmadu\LaraKvStore\LaraKvStore')
-@props(['cols' => 12, 'fullWidth' => false])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -15,6 +14,8 @@
     {!! LaraKvStore::css() !!}
     @livewireStyles
 
+    @livewireScripts
+
 {{--    {!! Pulse::js() !!}--}}
 
 </head>
@@ -28,6 +29,6 @@
         {{ $slot }}
     </x-kvstore::main>
 </div>
-@livewireScripts
+
 </body>
 </html>

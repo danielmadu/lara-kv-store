@@ -54,7 +54,9 @@ class KVStoreServiceProvider extends ServiceProvider
         });
 
         $this->callAfterResolving('livewire', function (LivewireManager $livewire, Application $app) {
+            $livewire->addPersistentMiddleware(['web']);
             $livewire->component('larakvstore.list', Livewire\ListKV::class);
+            $livewire->component('larakvstore.modal', Livewire\Modal::class);
         });
     }
 
@@ -63,6 +65,7 @@ class KVStoreServiceProvider extends ServiceProvider
         $this->callAfterResolving('router', function (Router $router, Application $app) {
             $router->group([
                 'prefix' => config('kvstore.prefix'),
+                'middleware' => ['web'],
             ], function (Router $router) {
                 $router->get('/', function (ViewFactory $view) {
                     return $view->make('kvstore::dashboard');

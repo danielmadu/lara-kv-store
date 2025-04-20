@@ -23,7 +23,8 @@ class Start extends Command
 {
     protected $signature = 'kv:start
                 {--host= : The IP address the server should bind to}
-                {--port= : The port the server should listen on}';
+                {--port= : The port the server should listen on}
+                { --debug}';
 
     protected $description = 'Start the KV server';
 
@@ -59,6 +60,10 @@ class Start extends Command
                             default =>  $serializer->getReplyMessage($response),
                         }
                     );
+                    if ($this->option('debug')) {
+                        $this->components->info($message->getCommand());
+                        $this->info(print_r($response, true));
+                    }
                 }
             });
 

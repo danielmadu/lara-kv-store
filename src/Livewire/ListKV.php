@@ -3,25 +3,21 @@
 namespace Danielmadu\LaraKvStore\Livewire;
 
 use Illuminate\Support\Facades\App;
+use Livewire\Attributes\Lazy;
 use Livewire\Component;
 
+#[Lazy]
 class ListKV extends Component
 {
-
-    public $keys = [];
-
-    public function mount()
+    public function render()
     {
         $connection = App::get('redis')->connection();
-        $this->keys = unserialize(
+        $keys = unserialize(
             $connection->command(
                 'keys',
                 ['']
             )[0]
         );
-    }
-    public function render()
-    {
-        return view('kvstore::livewire.list-k-v');
+        return view('kvstore::livewire.list-k-v', ['keys' => $keys]);
     }
 }
