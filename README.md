@@ -1,8 +1,8 @@
 # danielmadu/lara-kv-store
 
-<a href="https://packagist.org/packages/laravel/horizon"><img src="https://img.shields.io/packagist/dt/danielmadu/lara-kv-store" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/horizon"><img src="https://img.shields.io/packagist/v/danielmadu/lara-kv-store" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/horizon"><img src="https://img.shields.io/packagist/l/danielmadu/lara-kv-store" alt="License"></a>
+<a href="https://packagist.org/packages/danielmadu/lara-kv-store"><img src="https://img.shields.io/packagist/dt/danielmadu/lara-kv-store" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/danielmadu/lara-kv-store"><img src="https://img.shields.io/packagist/v/danielmadu/lara-kv-store" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/danielmadu/lara-kv-store"><img src="https://img.shields.io/packagist/l/danielmadu/lara-kv-store" alt="License"></a>
 
 Lara KV Store is a simple in-memory key-value
 datastore for development purpose, implemented in PHP using Redis protocol.
