@@ -1,5 +1,9 @@
 # danielmadu/lara-kv-store
 
+<a href="https://packagist.org/packages/laravel/horizon"><img src="https://img.shields.io/packagist/dt/danielmadu/lara-kv-store" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/horizon"><img src="https://img.shields.io/packagist/v/danielmadu/lara-kv-store" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/horizon"><img src="https://img.shields.io/packagist/l/danielmadu/lara-kv-store" alt="License"></a>
+
 Lara KV Store is a simple in-memory key-value
 datastore for development purpose, implemented in PHP using Redis protocol.
 
@@ -37,6 +41,11 @@ the Lara KV Store configuration using the `vendor:publish` Artisan command:
 ```bash
 $ php artisan vendor:publish --provider="DanielMadu\LaraKvStore\KVStoreServiceProvider"
 ```
+
+## Dashboard
+
+To access the dashboard that you can visualize all the keys stored you may access via `/kvstore` route.
+
 
 ## License
 
