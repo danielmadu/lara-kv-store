@@ -10,7 +10,7 @@
                     <tr>
                         <x-kvstore::th>Key</x-kvstore::th>
                         <x-kvstore::th>Expires At</x-kvstore::th>
-                        <x-kvstore::th>Actions</x-kvstore::th>
+                        <x-kvstore::th></x-kvstore::th>
                     </tr>
                 </x-kvstore::thead>
                 <tbody>

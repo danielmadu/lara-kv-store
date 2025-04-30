@@ -18,7 +18,10 @@
         <!-- Modal content -->
         <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
             <x-kvstore::card>
-                <p>{!! $content !!}</p>
+                <code
+                    class="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6">
+                    {!! $content !!}
+                </code>
             </x-kvstore::card>
             <!-- Modal footer -->
             <div class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">

@@ -1,5 +1,5 @@
 @props(['cols' => 6, 'rows' => 1])
-<div {{ $attributes->merge(['class' => 'rounded-lg border bg-card text-card-foreground shadow-sm px-2 py-5']) }}
+<div {{ $attributes->merge(['class' => 'flex flex-col p-3 sm:p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-xl shadow-sm ring-1 ring-gray-900/5 default:col-span-full']) }}
      x-data="{
         loading: false,
         init() {
