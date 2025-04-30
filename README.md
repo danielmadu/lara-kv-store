@@ -42,9 +42,9 @@ the Lara KV Store configuration using the `vendor:publish` Artisan command:
 $ php artisan vendor:publish --provider="DanielMadu\LaraKvStore\KVStoreServiceProvider"
 ```
 
-## Dashboard
+## Debug Dashboard
 
-To access the dashboard that you can visualize all the keys stored you may access via `/kvstore` route.
+To access the debug dashboard that you can visualize all the keys stored you may access via `/kvstore` route.
 
 
 ## License
